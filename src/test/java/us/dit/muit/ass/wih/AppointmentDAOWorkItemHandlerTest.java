@@ -16,7 +16,7 @@
 package us.dit.muit.ass.wih;
 
 import org.drools.core.process.instance.impl.WorkItemImpl;
-import org.hl7.fhir.r5.model.Appointment;
+
 import org.jbpm.process.workitem.core.TestWorkItemManager;
 import org.jbpm.test.AbstractBaseTest;
 import org.junit.Test;
@@ -36,7 +36,7 @@ public class AppointmentDAOWorkItemHandlerTest extends AbstractBaseTest {
         workItem.setParameter("URL", "https://hapi.fhir.org/baseR5/Appointment/773551");
         List<String> attributes=new ArrayList<String>();
         attributes.add("Practitioner");
-        attributes.add("Patient");
+        attributes.add("Subject");
         workItem.setParameter("Attributes",attributes);
 
         TestWorkItemManager manager = new TestWorkItemManager();
@@ -50,6 +50,9 @@ public class AppointmentDAOWorkItemHandlerTest extends AbstractBaseTest {
         assertEquals(1,
                      manager.getResults().size());
         assertTrue(manager.getResults().containsKey(workItem.getId()));
+        assertEquals("Practitioner/865",manager.getResults().get(workItem.getId()).get("Practitioner"));
+        assertEquals("Patient/1414",manager.getResults().get(workItem.getId()).get("Subject"));
+        
        
     }
 }
