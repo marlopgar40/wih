@@ -20,6 +20,7 @@
 		<version.org.slf4j>1.7.26</version.org.slf4j>
 		<java.module.name>${project.name}</java.module.name>
 		<hapifhir.version>6.10.0</hapifhir.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<dependencyManagement>
@@ -214,8 +215,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>11</source>
+					<target>11</target>
 					<annotationProcessors>
 						<annotationProcessor>
 							org.jbpm.process.workitem.core.util.WidProcessor</annotationProcessor>
