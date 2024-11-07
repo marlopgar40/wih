@@ -43,8 +43,9 @@ import java.util.logging.Logger;
 @Wid(widfile="AppointmentDAODefinitions.wid", name="AppointmentDAODefinitions",
         displayName="AppointmentDAODefinitions",
         defaultHandler="mvel: new us.dit.muit.ass.wih.AppointmentDAOWorkItemHandler()",
-        documentation = "wih/index.html",
-        category = "wih",
+        documentation = "${artifactId}/index.html",
+        category = "${artifactId}",
+        description = "${description}",
         icon = "AppointmentDAODefinitions.png",
         parameters={
         		      @WidParameter(name="URL", required = true),
@@ -55,13 +56,13 @@ import java.util.logging.Logger;
         		      @WidResult(name="Subject")
         		 },
         mavenDepends={
-            @WidMavenDepends(group="us.dit.muit.ass", artifact="wih", version="0.0.1-SNAPSHOT")
+        		  @WidMavenDepends(group = "${groupId}", artifact = "${artifactId}", version = "${version}")
         },
-        serviceInfo = @WidService(category = "wih", description = "Workitem Desciption",
-                         keywords = "",
+        serviceInfo = @WidService(category = "${name}", description ="${description}",
+                         keywords = "appointment,fhir,attributes",
                 		 action = @WidAction(title = "Devuelve los atributos solicitados del Appointment especificado"),
                          authinfo = @WidAuth(required = true, params = {"URL", "Attributes"},
-                                 paramsdescription = {"URL del Appoinment de interés", "Listado de los atributos solicitados"},
+                                 paramsdescription = {"URL del Appoinment", "Listado de los atributos solicitados"},
                                  referencesite = "referenceSiteURL")
         )
 )

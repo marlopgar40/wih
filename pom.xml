@@ -6,11 +6,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>us.dit.muit.ass</groupId>
 	<artifactId>wih</artifactId>
-	<name>wih</name>
+	<name>AppointmentDAODefinitions</name>
 	<version>0.0.1-SNAPSHOT</version>
-	<description>Workitem Desciption</description>
+	<description>WI para la consulta de atributos de un objeto appointment</description>
 	<organization>
-		<name>organization</name>
+		<name>Departamento de ingeniería telemática</name>
 	</organization>
 
 	<properties>
