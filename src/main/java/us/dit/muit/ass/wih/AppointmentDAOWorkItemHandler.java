@@ -38,6 +38,7 @@ import ca.uhn.fhir.util.UrlUtil;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.logging.Logger;
+import java.util.ArrayList;
 
 
 @Wid(widfile="AppointmentDAODefinitions.wid", name="AppointmentDAODefinitions",
@@ -48,8 +49,7 @@ import java.util.logging.Logger;
         description = "${description}",
         icon = "AppointmentDAODefinitions.png",
         parameters={
-        		      @WidParameter(name="URL", required = true),
-        		      @WidParameter(name="Attributes", required = true)
+        		      @WidParameter(name="URL", required = true)
         		   },
         results={
         		      @WidResult(name="Practitioner"),
@@ -73,10 +73,12 @@ public class AppointmentDAOWorkItemHandler extends AbstractLogOrThrowWorkItemHan
         private List<String> reqAttributes;
         private Appointment appointment;
 
-    public AppointmentDAOWorkItemHandler(String appointmentURL, List<String> reqAttributes){
-            this.appointmentURL = appointmentURL;
-            this.reqAttributes = reqAttributes;
+    public AppointmentDAOWorkItemHandler(){     
+    	  this.reqAttributes = new ArrayList<String>();
+          reqAttributes.add("Practitioner");   
+          reqAttributes.add("Subject"); 
         }
+   
 
     public void executeWorkItem(WorkItem workItem, WorkItemManager manager) {
         try {
@@ -84,7 +86,7 @@ public class AppointmentDAOWorkItemHandler extends AbstractLogOrThrowWorkItemHan
 
             // sample parameters
             appointmentURL = (String) workItem.getParameter("URL");
-            reqAttributes = (List<String>) workItem.getParameter("Attributes");
+         
 
             // obtener el recurso Appointment
             // para cada uno de los atributos pedidos y 

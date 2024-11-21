@@ -41,7 +41,7 @@ public class AppointmentDAOWorkItemHandlerTest extends AbstractBaseTest {
 
         TestWorkItemManager manager = new TestWorkItemManager();
 
-        AppointmentDAOWorkItemHandler handler = new AppointmentDAOWorkItemHandler("https://hapi.fhir.org/baseR5/Appointment/773551",attributes);
+        AppointmentDAOWorkItemHandler handler = new AppointmentDAOWorkItemHandler();
         handler.setLogThrownException(true);
         handler.executeWorkItem(workItem,
                                 manager);
