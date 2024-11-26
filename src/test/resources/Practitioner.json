@@ -1,0 +1,47 @@
+{
+  "resourceType": "Practitioner",
+  "id": "3",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2024-11-26T08:24:39.774+00:00",
+    "source": "#IUINGc3f57NigCeD"
+  },
+  "active": false,
+  "name": [ {
+    "family": "KAUFFMAN",
+    "given": [ "STEPHEN", "C" ]
+  } ],
+  "telecom": [ {
+    "value": "7038207000",
+    "use": "home"
+  }, {
+    "system": "fax",
+    "value": "7039310059",
+    "use": "home"
+  }, {
+    "system": "phone",
+    "value": "7038207000",
+    "use": "work"
+  }, {
+    "system": "fax",
+    "value": "7039310059",
+    "use": "work"
+  } ],
+  "gender": "male",
+  "address": [ {
+    "use": "home",
+    "line": [ "3450 N BEAUREGARD ST", "STE 1" ],
+    "city": "ALEXANDRIA",
+    "state": "VA",
+    "postalCode": "223021200"
+  }, {
+    "use": "work",
+    "line": [ "3450 N BEAUREGARD ST", "STE 1" ],
+    "city": "ALEXANDRIA",
+    "state": "VA",
+    "postalCode": "223021200"
+  } ]
+}
+
+
+
