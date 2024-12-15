@@ -33,7 +33,7 @@ public class AppointmentDAOWorkItemHandlerTest extends AbstractBaseTest {
         /**
          * Cita disponible en hapifhir online, creada a partir del json incluido appointment.json
          */
-        workItem.setParameter("URL", "https://hapi.fhir.org/baseR5/Appointment/773551");
+        workItem.setParameter("URL", "http://localhost:8888/fhir/Appointment/773551");
         List<String> attributes=new ArrayList<String>();
         attributes.add("Practitioner");
         attributes.add("Subject");
@@ -50,8 +50,8 @@ public class AppointmentDAOWorkItemHandlerTest extends AbstractBaseTest {
         assertEquals(1,
                      manager.getResults().size());
         assertTrue(manager.getResults().containsKey(workItem.getId()));
-        assertEquals("Practitioner/865",manager.getResults().get(workItem.getId()).get("Practitioner"));
-        assertEquals("Patient/1414",manager.getResults().get(workItem.getId()).get("Subject"));
+        assertEquals("Practitioner/3",manager.getResults().get(workItem.getId()).get("Practitioner"));
+        assertEquals("Patient/4",manager.getResults().get(workItem.getId()).get("Subject"));
         
        
     }
